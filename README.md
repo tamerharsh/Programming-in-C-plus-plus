@@ -5,7 +5,7 @@ In the code there are two libraries namely
 
 2.computation_file(.cpp and .h)having class computation.
  
-                    and 
+and 
 
 main.cpp for implementing above classes.
 
