@@ -11,7 +11,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-         os: [windows-latest, ubuntu-latest]
+         os: [windows-latest]
     steps:
 
     #This checkout the branch at github workspace $GITHUB_WORKSPACE.
