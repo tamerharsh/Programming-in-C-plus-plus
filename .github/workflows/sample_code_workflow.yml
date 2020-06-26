@@ -1,0 +1,30 @@
+name: Build sample codes 
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+   #Specify build platform.
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+         os: [windows-latest]
+    steps:
+
+    #This checkout the branch at github workspace $GITHUB_WORKSPACE.
+    - name: Checkout source
+      uses: actions/checkout@v2
+    
+    - name: Build Sample Code 
+      #This can be any cmd/Developer cmd etc.
+      if:  ${{ matrix.os }}=='windows-latest'
+      shell: cmd 
+      #Here write all the commands required to build the lib. Use pipe  (|) at the begining of run action if multiple commands are there. 
+      run: | 
+        mkdir build
+        cd build
+        cmake -Ax64 -G "Visual Studio 16 2019" -L ..
+        cmake --build . --clean-first --config Release 
