@@ -20,6 +20,7 @@ jobs:
     
     - name: Build Sample Code 
       #This can be any cmd/Developer cmd etc.
+      if:  ${{ matrix.os }}=='windows-latest'
       shell: cmd 
       #Here write all the commands required to build the lib. Use pipe  (|) at the begining of run action if multiple commands are there. 
       run: | 
