@@ -4,14 +4,14 @@
 //Abstract
 class Abstract{
 public:
-virtual int display(int num)=0;
+virtual int display(const int& num)const=0;
 };
 
 //Concerte from abstract
 class Concrete:public Abstract
 {
 public:
-int display(int num) override
+int display(const int& num) const override
 {
 return num;
 }
@@ -24,7 +24,7 @@ public:
 Dependent(std::shared_ptr<Abstract> ptr):m_ptr(ptr)
 {
 }
-void show(int num)
+void show(const int& num)const
 {
 std::cout<<"This is from Dependecy "<<m_ptr->display(num);
 }
