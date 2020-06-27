@@ -4,7 +4,7 @@
 //Abstract
 class Abstract{
 public:
-virtual int display(const int& num)=0;
+virtual int display(const int& num)const=0;
 };
 
 //Concerte from abstract
